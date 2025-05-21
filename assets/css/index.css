@@ -38,6 +38,12 @@ body {
   transition: transform 0.2s ease;
 }
 
+.nav-menu img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
 
 
 .nav-menu a:hover {
