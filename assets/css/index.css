@@ -22,9 +22,26 @@ body {
   align-items: center;
 }
 
-.logo {
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 40px; /* Sesuaikan dengan ukuran logo Anda */
+  width: auto;
+  margin-right: 10px; /* Jarak antara logo dan teks */
+}
+
+.nav-brand h1 {
+  margin: 0;
+  color: white;
   font-size: 1.5rem;
-  font-weight: bold;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
 }
 
 .nav-menu a {
@@ -45,11 +62,16 @@ body {
   margin-right: 5px;
 }
 
-
 .nav-menu a:hover {
   text-decoration: underline;
   transform: scale(1.05);
 }
+
+.nav-menu a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 
 /* HERO / JUDUL UTAMA */
 .hero {
