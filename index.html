@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stuntify</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">#</div>
+    <nav class="nav-menu">
+      <a href="#">🏠 Beranda</a>
+      <a href="articel.html">📰 Artikel</a>
+      <a href="bmi.html">📊 BMI</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-box">
+      <h1>Stuntify</h1>
+      <p>Langkah Kecil Mencegah Dampak Besar</p>
+      <p>Konsultasi, informasi, dan monitoring pertumbuhan dalam rangka <br /> mencegah stunting dan mendukung generasi Indonesia sehat.</p>
+    </section>
+
+    <section class="fitur section-box">
+      <div class="fitur-box">
+        <div class="icon">📊</div>
+        <h3>Pantau tumbuh kembang anak</h3>
+        <p>Fitur BMI Calculator dan Stunting Growth Monitoring</p>
+      </div>
+      <div class="fitur-box">
+        <div class="icon">📖</div>
+        <h3>Informasi tentang stunting</h3>
+        <p>Deskripsi, dampak, serta upaya pencegahan stunting</p>
+      </div>
+    </section>
+
+    <section class="tentang section-box">
+      <img src="https://img.icons8.com/color/96/family" alt="Keluarga" />
+      <p><strong>Tentang Stunting Information Center</strong><br>
+      Stunting Information Center adalah sebuah website yang bergerak di bidang kesehatan, khususnya stunting. Diharapkan dengan hadirnya website ini, masyarakat dapat mengakses informasi dengan lebih mudah dan juga dapat menganalisis apakah anaknya berisiko stunting atau tidak.</p>
+    </section>
+
+    <section class="artikel section-box">
+      <h2>Artikel Edukasi</h2>
+      <div class="artikel-container">
+        <div class="artikel-item">
+          <img src="https://source.unsplash.com/400x250/?child,health" alt="Anak sehat" />
+          <div class="artikel-content">
+            <h3>Apa Itu Stunting?</h3>
+            <p>Stunting adalah kondisi gagal tumbuh pada anak akibat kekurangan gizi kronis...</p>
+            <a href="#">Baca selengkapnya</a>
+          </div>
+        </div>
+        <div class="artikel-item">
+          <img src="https://source.unsplash.com/400x250/?nutrition,kids" alt="Nutrisi anak" />
+          <div class="artikel-content">
+            <h3>Peran Nutrisi Sejak Dini</h3>
+            <p>Nutrisi di 1000 hari pertama kehidupan sangat penting untuk mencegah stunting...</p>
+            <a href="#">Baca selengkapnya</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="peta section-box">
+      <h2>Daerah Terindikasi Stunting</h2>
+      <div id="map"></div>
+      <p class="sumber">Sumber: Survei Kesehatan Dasar Kementerian Kesehatan, 2018</p>
+    </section>
+
+  </main>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([-2.5, 118], 5);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.marker([-6.2, 106.8]).addTo(map)
+      .bindPopup('<b>Jakarta</b><br>Terindikasi stunting >20%');
+
+    L.marker([-7.79, 110.36]).addTo(map)
+      .bindPopup('<b>Yogyakarta</b><br>Terindikasi stunting >30%');
+  </script>
+</body>
+</html>

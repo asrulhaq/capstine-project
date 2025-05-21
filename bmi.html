@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kalkulator BMI</title>
+  <link rel="stylesheet" href="assets/css/Bmi.css" />
+</head>
+<body>
+
+  <h1 style="text-align: center;">Kalkulator BMI</h1>
+
+  <div class="container">
+    <div class="form-card">
+      <label>Nama Anda:</label>
+      <input type="text" id="nama" />
+
+      <label>Tanggal Lahir:</label>
+      <input type="date" id="tanggal-lahir" />
+
+      <label>Jenis Kelamin:</label>
+      <div class="radio-group">
+        <input type="radio" id="laki" name="gender" value="Laki-Laki" checked />
+        <label for="laki">Laki-Laki</label>
+        <input type="radio" id="perempuan" name="gender" value="Perempuan" />
+        <label for="perempuan">Perempuan</label>
+      </div>
+
+      <label>Tinggi Badan (CM):</label>
+      <input type="number" id="tinggi-badan-input" />
+      <small id="tinggiError"></small>
+
+      <label>Berat Badan (KG):</label>
+      <input type="number" id="berat-badan-input" />
+      <small id="beratError"></small>
+
+      <button id="btn-submit-bmi">Hitung</button>
+
+      <div class="result" id="result-bmi"></div>
+    </div>
+
+    <div class="history-card">
+      <h3>Riwayat BMI</h3>
+      <div id="riwayat-bmi"></div>
+      <button id="hapus-riwayat-btn">Hapus Semua Riwayat</button>
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <a href="index.html" class="back-button">Kembali ke Beranda</a>
+  </div>
+
+  <footer>
+    <p>stuntify - 2025</p>
+  </footer>
+
+  <script>
+    const button = document.getElementById("btn-submit-bmi");
+    const historyContainer = document.getElementById("riwayat-bmi");
+
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const tinggiInput = parseInt(document.getElementById("tinggi-badan-input").value);
+      const beratInput = parseInt(document.getElementById("berat-badan-input").value);
+      const result = document.getElementById("result-bmi");
+
+      let tinggiStatus = false;
+      let beratStatus = false;
+
+      if (!tinggiInput || isNaN(tinggiInput) || tinggiInput <= 0) {
+        document.getElementById('tinggiError').innerText = "Mohon isi data dengan angka";
+        document.getElementById("tinggi-badan-input").classList.add("input-error");
+      } else {
+        document.getElementById('tinggiError').innerText = "";
+        document.getElementById("tinggi-badan-input").classList.remove("input-error");
+        tinggiStatus = true;
+      }
+
+      if (!beratInput || isNaN(beratInput) || beratInput <= 0) {
+        document.getElementById('beratError').innerText = "Mohon isi data dengan angka";
+        document.getElementById("berat-badan-input").classList.add("input-error");
+      } else {
+        document.getElementById('beratError').innerText = "";
+        document.getElementById("berat-badan-input").classList.remove("input-error");
+        beratStatus = true;
+      }
+
+      if (tinggiStatus && beratStatus) {
+        const tinggiMeter = tinggiInput / 100;
+        const bmiResult = (beratInput / (tinggiMeter * tinggiMeter)).toFixed(2);
+        let kategori = '';
+
+        if (bmiResult <= 18.5) {
+          kategori = 'Underweight';
+        } else if (bmiResult > 18.5 && bmiResult < 24.9) {
+          kategori = 'Normal';
+        } else if (bmiResult >= 25 && bmiResult < 29.9) {
+          kategori = 'Overweight';
+        } else {
+          kategori = 'Obesity';
+        }
+
+        result.innerText = kategori + " : " + bmiResult;
+
+        const nama = document.getElementById("nama").value || "Tanpa Nama";
+        const tanggal = new Date().toLocaleDateString("id-ID");
+
+        const entryDiv = document.createElement("div");
+        entryDiv.className = "history-entry";
+
+        const text = document.createElement("span");
+        text.textContent = `${tanggal} - ${nama} - ${kategori} (${bmiResult})`;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "❌";
+        deleteButton.className = "delete-btn";
+        deleteButton.addEventListener("click", () => {
+          entryDiv.remove();
+        });
+
+        entryDiv.appendChild(text);
+        entryDiv.appendChild(deleteButton);
+        historyContainer.appendChild(entryDiv);
+      } else {
+        result.innerText = "";
+      }
+    });
+
+    document.getElementById("hapus-riwayat-btn").addEventListener("click", () => {
+      historyContainer.innerHTML = "";
+    });
+  </script>
+</body>
+</html>

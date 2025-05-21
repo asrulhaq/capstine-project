@@ -1,0 +1,193 @@
+/* Reset dasar */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+  background-color: #007f87;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* Container utama */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Kartu form dan riwayat */
+.form-card, .history-card {
+  background-color: #58a5a7;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Input dan label */
+.form-card label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.form-card input[type="text"],
+.form-card input[type="number"],
+.form-card input[type="date"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Radio button */
+.radio-group {
+  margin-bottom: 1rem;
+}
+
+.radio-group input {
+  margin-right: 0.5rem;
+}
+
+/* Tombol submit */
+.form-card button {
+  padding: 0.7rem 1rem;
+  background-color: #004d4f;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.form-card button:hover {
+  background-color: #003233;
+}
+
+/* Validasi error */
+.form-card small {
+  color: yellow;
+}
+
+.input-error {
+  border: 2px solid yellow;
+}
+
+/* Hasil BMI */
+.result {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* Riwayat BMI */
+.history-card h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#riwayat-bmi {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.history-entry {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.history-entry span {
+  flex: 1;
+  margin-right: 1rem;
+  word-break: break-word;
+}
+
+.delete-btn {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background-color: #b71c1c;
+}
+
+/* Tombol hapus riwayat */
+#hapus-riwayat-btn {
+  margin-top: 1rem;
+  background-color: #b71c1c;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#hapus-riwayat-btn:hover {
+  background-color: #7f0000;
+}
+
+/* Tombol kembali */
+.back-button {
+  display: inline-block;
+  background-color: #007f87;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+.back-button:hover {
+  background-color: #005c5f;
+}
+
+/* Footer */
+footer {
+  background-color: #007f87;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
