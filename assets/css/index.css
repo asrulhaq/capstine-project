@@ -239,6 +239,41 @@ body {
   text-decoration: none;
 }
 
+footer {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  padding: 0;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+footer .border-bottom {
+  border-color: #dee2e6 !important;
+}
+
+footer .text-reset {
+  text-decoration: none;
+}
+
+footer .fab {
+  font-size: 1.2rem;
+}
+
+footer .text-uppercase {
+  letter-spacing: 0.1rem;
+}
+
+footer .container {
+  padding: 0;
+}
+
+footer section {
+  padding: 1rem 0;
+}
+
+footer .text-center {
+  text-align: center;
+}
 /* RESPONSIF */
 @media screen and (max-width: 768px) {
   .fitur {

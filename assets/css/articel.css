@@ -218,20 +218,62 @@ body {
   color: white;
 }
 
-/* Footer */
+/* Footer styling - updated */
 footer {
-  background-color: #2ab7b4;
-  color: white;
-  padding: 20px 0;
-  margin-top: 40px;
+  background-color: #f8f9fa;
+  color: #6c757d;
+  margin-top: 3rem;
+  width: 100%;
+  clear: both;
 }
 
-footer a {
-  color: white;
+footer .border-bottom {
+  border-color: #dee2e6 !important;
 }
 
 footer .text-reset {
-  color: white !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .text-reset:hover {
+  color: #2ab7b4 !important;
+}
+
+footer .fab {
+  font-size: 1.2rem;
+}
+
+footer .text-uppercase {
+  letter-spacing: 0.1rem;
+}
+
+footer section {
+  padding: 1.5rem 0;
+}
+
+footer .social-section {
+  padding: 1rem 0;
+}
+
+footer .copyright {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+footer .footer-content {
+  padding: 0 1.5rem;
+}
+
+footer h6 {
+  color: #333;
+  margin-bottom: 1.2rem;
+}
+
+footer p {
+  color: #666;
+  line-height: 1.6;
 }
 
 /* Responsif */
